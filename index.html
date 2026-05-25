@@ -117,8 +117,17 @@ h1,h2,h3{font-family:var(--ff-h);font-weight:800;line-height:1.08;letter-spacing
 .difc p{color:var(--muted);font-size:.9rem}
 
 /* Trabalhos */
-.works-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
-.work{position:relative;border-radius:18px;overflow:hidden;aspect-ratio:9/16;border:1px solid var(--line);cursor:pointer;background:#000}
+.works-carousel{position:relative}
+.works-grid{display:flex;gap:1.2rem;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:.4rem .2rem 1.2rem;scroll-padding-left:.2rem}
+.works-grid::-webkit-scrollbar{display:none}
+.work{flex:0 0 clamp(230px,27%,300px);scroll-snap-align:start;position:relative;border-radius:18px;overflow:hidden;aspect-ratio:9/16;border:1px solid var(--line);cursor:pointer;background:#000;transition:transform .4s var(--ease)}
+.work:hover{transform:translateY(-6px)}
+.works-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:5;width:52px;height:52px;border-radius:50%;background:rgba(13,22,38,.85);border:1px solid var(--line);color:#fff;cursor:pointer;display:grid;place-items:center;backdrop-filter:blur(8px);transition:.3s;box-shadow:var(--shadow)}
+.works-arrow:hover{background:var(--grad);border-color:transparent;transform:translateY(-50%) scale(1.08)}
+.works-arrow svg{width:22px;height:22px}
+.works-arrow.prev{left:-14px}.works-arrow.next{right:-14px}
+.works-arrow[disabled]{opacity:0;pointer-events:none}
+@media(max-width:680px){.works-arrow{display:none}}
 .work img,.work video{width:100%;height:100%;object-fit:cover}
 .work video{position:absolute;inset:0;opacity:0;transition:opacity .4s}
 .work.playing video{opacity:1}
@@ -302,13 +311,17 @@ h1,h2,h3{font-family:var(--ff-h);font-weight:800;line-height:1.08;letter-spacing
       <h2>Trabalhos que <span class="grad">já entregamos</span></h2>
       <p>Instalações e manutenções reais. Toque para assistir.</p>
     </div>
-    <div class="works-grid">
-      <div class="work rv" data-d="1" data-src="assets/works/trabalho-05.mp4"><img src="assets/works/trabalho-05.jpg" alt="Portão deslizante"><div class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div><span class="cap">Portão deslizante</span></div>
-      <div class="work rv" data-d="2" data-src="assets/works/trabalho-02.mp4"><img src="assets/works/trabalho-02.jpg" alt="Kit basculante"><div class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div><span class="cap">Kit basculante</span></div>
-      <div class="work rv" data-d="3" data-src="assets/works/trabalho-04.mp4"><img src="assets/works/trabalho-04.jpg" alt="Automação"><div class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div><span class="cap">Automação</span></div>
-      <div class="work rv" data-d="1" data-src="assets/works/trabalho-01.mp4"><img src="assets/works/trabalho-01.jpg" alt="Instalação"><div class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div><span class="cap">Instalação</span></div>
-      <div class="work rv" data-d="2" data-src="assets/works/trabalho-06.mp4"><img src="assets/works/trabalho-06.jpg" alt="Manutenção"><div class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div><span class="cap">Manutenção</span></div>
-      <div class="work rv" data-d="3" data-src="assets/works/trabalho-03.mp4"><img src="assets/works/trabalho-03.jpg" alt="Motor de portão"><div class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div><span class="cap">Motor de portão</span></div>
+    <div class="works-carousel rv">
+      <button class="works-arrow prev" id="worksPrev" aria-label="Anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M15 18l-6-6 6-6"/></svg></button>
+      <div class="works-grid" id="worksTrack">
+        <div class="work" data-src="assets/works/trabalho-01.mp4"><img src="assets/works/trabalho-01.jpg" alt="Instalação"><div class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div><span class="cap">Instalação</span></div>
+        <div class="work" data-src="assets/works/trabalho-05.mp4"><img src="assets/works/trabalho-05.jpg" alt="Portão deslizante"><div class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div><span class="cap">Portão deslizante</span></div>
+        <div class="work" data-src="assets/works/trabalho-02.mp4"><img src="assets/works/trabalho-02.jpg" alt="Kit basculante"><div class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div><span class="cap">Kit basculante</span></div>
+        <div class="work" data-src="assets/works/trabalho-04.mp4"><img src="assets/works/trabalho-04.jpg" alt="Automação"><div class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div><span class="cap">Automação</span></div>
+        <div class="work" data-src="assets/works/trabalho-06.mp4"><img src="assets/works/trabalho-06.jpg" alt="Manutenção"><div class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div><span class="cap">Manutenção</span></div>
+        <div class="work" data-src="assets/works/trabalho-03.mp4"><img src="assets/works/trabalho-03.jpg" alt="Motor de portão"><div class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div><span class="cap">Motor de portão</span></div>
+      </div>
+      <button class="works-arrow next" id="worksNext" aria-label="Próximo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 18l6-6-6-6"/></svg></button>
     </div>
   </div>
 </section>
@@ -415,6 +428,16 @@ document.querySelectorAll('.work').forEach(w=>{
     w.classList.add('playing');v.play().catch(()=>{});
   });
 });
+// carrossel trabalhos (setas)
+(function(){
+  const track=document.getElementById('worksTrack'),prev=document.getElementById('worksPrev'),next=document.getElementById('worksNext');
+  if(!track)return;
+  const step=()=>{const c=track.querySelector('.work');return c?c.getBoundingClientRect().width+19:300;};
+  const upd=()=>{prev.disabled=track.scrollLeft<8;next.disabled=track.scrollLeft+track.clientWidth>=track.scrollWidth-8;};
+  prev.addEventListener('click',()=>track.scrollBy({left:-step()*2,behavior:'smooth'}));
+  next.addEventListener('click',()=>track.scrollBy({left:step()*2,behavior:'smooth'}));
+  track.addEventListener('scroll',upd,{passive:true}); addEventListener('resize',upd); upd();
+})();
 </script>
 </body>
 </html>
