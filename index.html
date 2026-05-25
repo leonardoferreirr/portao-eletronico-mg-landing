@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portão Eletrônico MG — Instalação e Manutenção 24h | MG Soluções e Serviços</title>
+<meta name="description" content="Instalação e manutenção de portões eletrônicos em Minas Gerais. 23 anos de experiência, atendimento 24h, melhor preço da cidade e parcelamento em até 12x. Conserto hoje mesmo.">
+<meta name="theme-color" content="#0d1626">
+<meta property="og:title" content="Portão Eletrônico MG — Instalação e Manutenção 24h">
+<meta property="og:description" content="Seu portão parou? A gente conserta hoje mesmo. Atendimento 24h em Minas Gerais.">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0d1626; --navy2:#121e30; --navy3:#1a283d;
+  --blue:#1f86d6; --blue-bright:#2ea3f2; --orange:#ea8331; --orange-bright:#ff7a1a;
+  --paper:#eef3fa; --muted:#94a3bd; --line:rgba(255,255,255,.10);
+  --grad:linear-gradient(100deg,#1f86d6 0%,#ea8331 100%);
+  --grad-rev:linear-gradient(100deg,#ea8331,#1f86d6);
+  --ff-h:"Sora",sans-serif; --ff:"Inter",sans-serif;
+  --radius:22px; --maxw:1200px; --ease:cubic-bezier(.22,1,.36,1);
+  --shadow:0 30px 70px -30px rgba(0,0,0,.7);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{font-family:var(--ff);background:var(--navy);color:var(--paper);line-height:1.6;overflow-x:hidden}
+img,video{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(100% - 3rem,var(--maxw));margin-inline:auto}
+h1,h2,h3{font-family:var(--ff-h);font-weight:800;line-height:1.08;letter-spacing:-.02em}
+.grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.eyebrow{display:inline-flex;align-items:center;gap:.55rem;font-family:var(--ff-h);font-weight:700;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--orange-bright)}
+
+.btn{display:inline-flex;align-items:center;gap:.6rem;font-family:var(--ff-h);font-weight:700;font-size:1rem;padding:1.05rem 2rem;border-radius:100px;border:none;cursor:pointer;transition:transform .4s var(--ease),box-shadow .4s var(--ease);white-space:nowrap}
+.btn svg{width:18px;height:18px;transition:transform .4s var(--ease)}
+.btn:hover svg{transform:translateX(4px)}
+.btn-grad{background:var(--grad);color:#fff;box-shadow:0 18px 40px -16px rgba(234,131,49,.6)}
+.btn-grad:hover{transform:translateY(-3px);box-shadow:0 26px 56px -18px rgba(234,131,49,.75)}
+.btn-ghost{background:rgba(255,255,255,.05);color:#fff;border:1px solid var(--line);backdrop-filter:blur(8px)}
+.btn-ghost:hover{background:rgba(255,255,255,.1);transform:translateY(-3px)}
+.btn-wpp{background:#25d366;color:#073b22}
+.btn-wpp:hover{transform:translateY(-3px)}
+
+/* Nav */
+.nav{position:fixed;inset:0 0 auto 0;z-index:100;padding:1rem 0;transition:.4s}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;background:rgba(13,22,38,.55);backdrop-filter:blur(16px) saturate(150%);border:1px solid var(--line);border-radius:100px;padding:.5rem .6rem .5rem 1.3rem;transition:.4s}
+.nav.scrolled .nav-inner{background:rgba(13,22,38,.9)}
+.brand{display:flex;align-items:center;gap:.7rem}
+.brand img{height:38px;width:auto}
+.brand .bn{font-family:var(--ff-h);font-weight:800;font-size:1rem;line-height:1}
+.brand .bn small{display:block;font-weight:600;font-size:.62rem;letter-spacing:.18em;color:var(--muted);text-transform:uppercase}
+.nav-links{display:flex;gap:1.9rem;align-items:center}
+.nav-links a{font-family:var(--ff-h);font-weight:600;font-size:.86rem;color:rgba(255,255,255,.75);transition:.3s}
+.nav-links a:hover{color:#fff}
+.nav-cta{padding:.7rem 1.4rem;font-size:.86rem}
+.burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:.4rem}
+.burger span{width:24px;height:2px;background:#fff;border-radius:2px}
+
+/* Hero */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+.hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.hero-shade{position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(13,22,38,.82),rgba(13,22,38,.7) 40%,rgba(13,22,38,.96)),radial-gradient(120% 80% at 15% 30%,rgba(31,134,214,.4),transparent 55%),radial-gradient(90% 70% at 90% 80%,rgba(234,131,49,.3),transparent 55%)}
+.hero-inner{position:relative;z-index:2;padding:9rem 0 4rem;max-width:46rem}
+.hero-badges{display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:1.6rem}
+.pill{display:inline-flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.07);border:1px solid var(--line);border-radius:100px;padding:.45rem 1rem;font-size:.82rem;font-weight:600;backdrop-filter:blur(6px)}
+.pill .dot{width:8px;height:8px;border-radius:50%;background:#22d36a;box-shadow:0 0 0 0 rgba(34,211,106,.6);animation:pulse 1.8s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(34,211,106,.6)}70%{box-shadow:0 0 0 9px rgba(34,211,106,0)}100%{box-shadow:0 0 0 0 rgba(34,211,106,0)}}
+.hero h1{font-size:clamp(2.6rem,6vw,4.6rem);margin-bottom:1.3rem}
+.hero p.sub{font-size:1.2rem;color:rgba(255,255,255,.82);max-width:33rem;margin-bottom:2.2rem}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap}
+.hero-stats{display:flex;gap:2.6rem;margin-top:3rem;padding-top:1.8rem;border-top:1px solid var(--line);flex-wrap:wrap}
+.hero-stats .n{font-family:var(--ff-h);font-size:2.3rem;font-weight:800;line-height:1}
+.hero-stats .l{font-size:.82rem;color:var(--muted);margin-top:.3rem}
+
+/* Section base */
+.sec{padding:6.5rem 0;position:relative}
+.sec-head{max-width:44rem;margin-bottom:3.4rem}
+.sec-head.center{margin-inline:auto;text-align:center}
+.sec-head h2{font-size:clamp(2rem,4.6vw,3.2rem);margin:1rem 0 1rem}
+.sec-head p{color:var(--muted);font-size:1.08rem}
+
+/* Problems */
+.problems{background:var(--navy2)}
+.prob-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+.prob{background:var(--navy3);border:1px solid var(--line);border-radius:18px;padding:1.6rem 1.5rem;display:flex;gap:1rem;align-items:flex-start;transition:transform .4s var(--ease),border-color .4s}
+.prob:hover{transform:translateY(-5px);border-color:rgba(234,131,49,.5)}
+.prob .ic{width:44px;height:44px;border-radius:12px;background:rgba(234,131,49,.16);display:grid;place-items:center;flex-shrink:0}
+.prob .ic svg{width:22px;height:22px;stroke:var(--orange-bright)}
+.prob p{font-weight:600;font-size:1rem}
+.prob-cta{text-align:center;margin-top:3rem}
+.prob-cta .big{font-family:var(--ff-h);font-weight:800;font-size:1.5rem;margin-bottom:1.4rem}
+.prob-cta .big .grad{font-style:normal}
+
+/* Tipos */
+.tipos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+.tipo{position:relative;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);background:var(--navy2);padding:2.2rem 2rem;transition:transform .5s var(--ease)}
+.tipo::before{content:"";position:absolute;inset:0;background:var(--grad);opacity:0;transition:opacity .5s;z-index:0}
+.tipo:hover{transform:translateY(-8px)}
+.tipo:hover::before{opacity:.12}
+.tipo>*{position:relative;z-index:1}
+.tipo .ic{width:60px;height:60px;border-radius:16px;background:var(--grad);display:grid;place-items:center;margin-bottom:1.3rem;box-shadow:0 14px 30px -12px rgba(31,134,214,.6)}
+.tipo .ic svg{width:30px;height:30px;stroke:#fff}
+.tipo h3{font-size:1.4rem;margin-bottom:.5rem}
+.tipo p{color:var(--muted);font-size:.96rem}
+
+/* Diferenciais */
+.dif{background:var(--navy2)}
+.dif-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem}
+.difc{text-align:center;padding:2rem 1.4rem;border-radius:18px;border:1px solid var(--line);background:var(--navy3);transition:transform .4s var(--ease)}
+.difc:hover{transform:translateY(-6px)}
+.difc .ic{width:58px;height:58px;border-radius:50%;background:var(--grad);display:grid;place-items:center;margin:0 auto 1.1rem}
+.difc .ic svg{width:28px;height:28px;stroke:#fff}
+.difc h3{font-size:1.12rem;margin-bottom:.4rem}
+.difc p{color:var(--muted);font-size:.9rem}
+
+/* Trabalhos */
+.works-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+.work{position:relative;border-radius:18px;overflow:hidden;aspect-ratio:9/16;border:1px solid var(--line);cursor:pointer;background:#000}
+.work img,.work video{width:100%;height:100%;object-fit:cover}
+.work video{position:absolute;inset:0;opacity:0;transition:opacity .4s}
+.work.playing video{opacity:1}
+.work::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(13,22,38,.65),transparent 50%);transition:opacity .4s;z-index:1}
+.work.playing::after{opacity:0}
+.work .play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.5);backdrop-filter:blur(8px);display:grid;place-items:center;z-index:2;transition:.4s}
+.work:hover .play{background:var(--grad);border-color:transparent}
+.work.playing .play{opacity:0}
+.work .play svg{width:24px;height:24px;fill:#fff;margin-left:3px}
+.work .cap{position:absolute;left:1rem;bottom:.9rem;z-index:2;font-family:var(--ff-h);font-weight:700;font-size:.9rem}
+
+/* Extras / especializados */
+.extra-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.extra{display:flex;align-items:center;gap:1rem;background:var(--navy2);border:1px solid var(--line);border-radius:16px;padding:1.3rem 1.5rem;transition:.4s var(--ease)}
+.extra:hover{transform:translateY(-4px);border-color:rgba(31,134,214,.5)}
+.extra .ic{width:46px;height:46px;border-radius:12px;background:rgba(31,134,214,.16);display:grid;place-items:center;flex-shrink:0}
+.extra .ic svg{width:23px;height:23px;stroke:var(--blue-bright)}
+.extra h3{font-size:1.05rem}
+
+/* Brands */
+.brands{background:var(--navy2);border-block:1px solid var(--line)}
+.brands .lab{text-align:center;font-family:var(--ff-h);font-weight:700;font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:2rem}
+.brands-row{display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;align-items:center}
+.brands-row .bcard{background:#fff;border-radius:14px;padding:1rem 1.4rem;display:grid;place-items:center;height:74px;width:150px;box-shadow:0 10px 24px -14px rgba(0,0,0,.6)}
+.brands-row .bcard img{max-height:42px;max-width:118px;object-fit:contain}
+
+/* CTA */
+.cta{text-align:center;position:relative;overflow:hidden}
+.cta::before{content:"";position:absolute;inset:0;background:var(--grad);opacity:.1}
+.cta-inner{position:relative;z-index:2;max-width:44rem;margin-inline:auto}
+.cta h2{font-size:clamp(2.2rem,5.5vw,3.6rem);margin-bottom:1.2rem}
+.cta p{color:rgba(255,255,255,.8);font-size:1.15rem;margin-bottom:2.2rem}
+
+/* Footer */
+.footer{background:#0a111f;border-top:1px solid var(--line);padding:4rem 0 2rem}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1.2fr;gap:2.5rem;padding-bottom:2.6rem;border-bottom:1px solid var(--line)}
+.footer .brand{margin-bottom:1.1rem}
+.footer p{font-size:.92rem;color:var(--muted);max-width:24rem}
+.footer h4{font-family:var(--ff-h);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--orange-bright);margin-bottom:1rem}
+.footer ul{list-style:none;display:grid;gap:.6rem}
+.footer a,.footer li{font-size:.94rem;color:var(--muted);transition:.3s}
+.footer a:hover{color:#fff}
+.foot-legal{padding-top:1.6rem;font-size:.82rem;color:rgba(255,255,255,.4);display:flex;justify-content:space-between;flex-wrap:wrap;gap:.8rem}
+
+.wfloat{position:fixed;bottom:1.5rem;right:1.5rem;z-index:90;width:60px;height:60px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 12px 30px -8px rgba(37,211,102,.7);transition:transform .4s var(--ease)}
+.wfloat:hover{transform:scale(1.1)}
+.wfloat svg{width:32px;height:32px;fill:#fff}
+
+.rv{opacity:0;transform:translateY(34px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.rv.in{opacity:1;transform:none}
+.rv[data-d="1"]{transition-delay:.1s}.rv[data-d="2"]{transition-delay:.2s}.rv[data-d="3"]{transition-delay:.3s}.rv[data-d="4"]{transition-delay:.4s}
+
+@media(max-width:980px){
+  .prob-grid,.tipos-grid,.works-grid,.extra-grid{grid-template-columns:1fr 1fr}
+  .dif-grid{grid-template-columns:1fr 1fr}
+  .footer-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:680px){
+  .nav-links{display:none}.burger{display:flex}
+  .sec{padding:4.4rem 0}
+  .hero-inner{padding:7.5rem 0 3rem}
+  .hero-stats{gap:1.6rem}
+  .prob-grid,.tipos-grid,.dif-grid,.works-grid,.extra-grid,.footer-grid{grid-template-columns:1fr}
+  .brand .bn{font-size:.9rem}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition-duration:.001s!important}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a href="#topo" class="brand"><img src="assets/shield.png" alt="MG Soluções"><span class="bn">Portão Eletrônico MG<small>MG Soluções e Serviços</small></span></a>
+    <nav class="nav-links">
+      <a href="#problemas">Problemas</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#trabalhos">Trabalhos</a>
+      <a href="#extras">Outros serviços</a>
+    </nav>
+    <a href="https://wa.me/5531988954257?text=Ol%C3%A1!%20Quero%20fazer%20um%20or%C3%A7amento%20de%20port%C3%A3o%20eletr%C3%B4nico." class="btn btn-grad nav-cta">Orçamento 24h</a>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="topo">
+  <video class="hero-video" autoplay muted loop playsinline poster="assets/hero-poster.jpg">
+    <source src="assets/hero-mix.mp4" type="video/mp4"></video>
+  <div class="hero-shade"></div>
+  <div class="wrap">
+    <div class="hero-inner">
+      <div class="hero-badges">
+        <span class="pill"><span class="dot"></span>Atendimento imediato 24h</span>
+        <span class="pill">23 anos de experiência</span>
+        <span class="pill">Minas Gerais</span>
+      </div>
+      <h1>Seu portão parou? <span class="grad">A gente conserta hoje mesmo.</span></h1>
+      <p class="sub">Instalação e manutenção de portões eletrônicos com a qualidade e o melhor preço da cidade. Motor, controle, sensor ou cabo de aço, a gente resolve com agilidade e garantia.</p>
+      <div class="hero-actions">
+        <a href="https://wa.me/5531988954257?text=Ol%C3%A1!%20Quero%20fazer%20um%20or%C3%A7amento%20de%20port%C3%A3o%20eletr%C3%B4nico." class="btn btn-grad">Fazer meu orçamento
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="#trabalhos" class="btn btn-ghost">Ver trabalhos</a>
+      </div>
+      <div class="hero-stats">
+        <div><div class="n grad">23+</div><div class="l">anos de experiência</div></div>
+        <div><div class="n grad">24h</div><div class="l">atendimento imediato</div></div>
+        <div><div class="n grad">12x</div><div class="l">no cartão, sem dor de cabeça</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEMAS -->
+<section class="sec problems" id="problemas">
+  <div class="wrap">
+    <div class="sec-head center rv">
+      <span class="eyebrow">Diagnóstico rápido</span>
+      <h2>Seu portão está com <span class="grad">algum desses problemas?</span></h2>
+      <p>Se você se identificou com qualquer um deles, a gente resolve. Atendimento no mesmo dia.</p>
+    </div>
+    <div class="prob-grid">
+      <div class="prob rv" data-d="1"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M6 8a6 6 0 0 1 12 0M12 2v2M4 12h16v8H4zM9 16h6"/></svg></span><p>O controle remoto parou de funcionar</p></div>
+      <div class="prob rv" data-d="2"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 4h16v16H4zM12 4v16"/></svg></span><p>O portão não abre ou não fecha</p></div>
+      <div class="prob rv" data-d="3"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/></svg></span><p>Quando abre ou fecha, ele bate</p></div>
+      <div class="prob rv" data-d="1"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M5 12h14M5 12l4-4M5 12l4 4"/></svg></span><p>Só abre, ou só fecha</p></div>
+      <div class="prob rv" data-d="2"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg></span><p>Problema no sensor anti-esmagamento</p></div>
+      <div class="prob rv" data-d="3"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="3" y="8" width="13" height="8" rx="2"/><path d="M16 11h3l2 2v1h-5"/><circle cx="7" cy="18" r="1.6"/></svg></span><p>Precisa de um motor novo</p></div>
+    </div>
+    <div class="prob-cta rv">
+      <div class="big">Consertamos <span class="grad">hoje mesmo</span> — atendimento 24h.</div>
+      <a href="https://wa.me/5531988954257?text=Ol%C3%A1!%20Meu%20port%C3%A3o%20est%C3%A1%20com%20problema%2C%20preciso%20de%20atendimento." class="btn btn-grad">Chamar agora no WhatsApp
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- TIPOS DE PORTÃO -->
+<section class="sec" id="servicos">
+  <div class="wrap">
+    <div class="sec-head center rv">
+      <span class="eyebrow">Nossa especialidade</span>
+      <h2>Todos os tipos de <span class="grad">portão eletrônico</span></h2>
+      <p>Instalação, automação e manutenção com peças de qualidade e garantia no serviço.</p>
+    </div>
+    <div class="tipos-grid">
+      <article class="tipo rv" data-d="1">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9"><rect x="2" y="6" width="20" height="12" rx="1"/><path d="M2 10h20M2 14h20M14 6v12"/><path d="M2 20h20"/></svg></div>
+        <h3>Portão Deslizante</h3><p>Instalação e conserto de motor, cremalheira, trilho e automação para portões de correr.</p></article>
+      <article class="tipo rv" data-d="2">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9"><path d="M3 20V8l9-4 9 4v12M3 12h18"/></svg></div>
+        <h3>Portão Basculante</h3><p>Kit de automação, troca de cabo de aço, molas e motor para portões basculantes.</p></article>
+      <article class="tipo rv" data-d="3">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9"><rect x="3" y="4" width="8" height="16" rx="1"/><rect x="13" y="4" width="8" height="16" rx="1"/><path d="M11 12h2"/></svg></div>
+        <h3>Portão Pivotante</h3><p>Automação e manutenção de portões de abrir, com braço hidráulico ou motor pivotante.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- DIFERENCIAIS -->
+<section class="sec dif">
+  <div class="wrap">
+    <div class="sec-head center rv">
+      <span class="eyebrow">Por que a MG</span>
+      <h2>Rápido, profissional e <span class="grad">com garantia</span></h2>
+    </div>
+    <div class="dif-grid">
+      <div class="difc rv" data-d="1"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Atendimento rápido</h3><p>Ligou ou chamou no WhatsApp, a gente já se programa pra te atender.</p></div>
+      <div class="difc rv" data-d="2"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/></svg></div><h3>Equipe profissional</h3><p>Técnicos especializados para resolver o seu problema de forma certa.</p></div>
+      <div class="difc rv" data-d="3"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/></svg></div><h3>Reparo imediato</h3><p>Consertamos hoje mesmo, com atendimento imediato e profissional.</p></div>
+      <div class="difc rv" data-d="4"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div><h3>Garantia e melhor preço</h3><p>Serviço qualificado, melhor preço da cidade e parcelamento em até 12x.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- TRABALHOS -->
+<section class="sec" id="trabalhos">
+  <div class="wrap">
+    <div class="sec-head center rv">
+      <span class="eyebrow">Portfólio</span>
+      <h2>Trabalhos que <span class="grad">já entregamos</span></h2>
+      <p>Instalações e manutenções reais. Toque para assistir.</p>
+    </div>
+    <div class="works-grid">
+      <div class="work rv" data-d="1" data-src="assets/works/trabalho-05.mp4"><img src="assets/works/trabalho-05.jpg" alt="Portão deslizante"><div class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div><span class="cap">Portão deslizante</span></div>
+      <div class="work rv" data-d="2" data-src="assets/works/trabalho-02.mp4"><img src="assets/works/trabalho-02.jpg" alt="Kit basculante"><div class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div><span class="cap">Kit basculante</span></div>
+      <div class="work rv" data-d="3" data-src="assets/works/trabalho-04.mp4"><img src="assets/works/trabalho-04.jpg" alt="Automação"><div class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div><span class="cap">Automação</span></div>
+      <div class="work rv" data-d="1" data-src="assets/works/trabalho-01.mp4"><img src="assets/works/trabalho-01.jpg" alt="Instalação"><div class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div><span class="cap">Instalação</span></div>
+      <div class="work rv" data-d="2" data-src="assets/works/trabalho-06.mp4"><img src="assets/works/trabalho-06.jpg" alt="Manutenção"><div class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div><span class="cap">Manutenção</span></div>
+      <div class="work rv" data-d="3" data-src="assets/works/trabalho-03.mp4"><img src="assets/works/trabalho-03.jpg" alt="Motor de portão"><div class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div><span class="cap">Motor de portão</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- EXTRAS -->
+<section class="sec problems" id="extras">
+  <div class="wrap">
+    <div class="sec-head center rv">
+      <span class="eyebrow">Somos especializados também</span>
+      <h2>Muito além do <span class="grad">portão</span></h2>
+      <p>Soluções completas de automação e segurança para a sua casa ou empresa.</p>
+    </div>
+    <div class="extra-grid">
+      <div class="extra rv" data-d="1"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9"><path d="M3 10 12 4l9 6M5 9v11h14V9"/></svg></span><h3>Toldos e policarbonato</h3></div>
+      <div class="extra rv" data-d="2"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M10 6h4M10 10h4M11 18h2"/></svg></span><h3>Interfones</h3></div>
+      <div class="extra rv" data-d="3"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9"><rect x="3" y="6" width="14" height="12" rx="2"/><path d="M21 8v8M17 10h4M17 14h4"/></svg></span><h3>Controle eletrônico</h3></div>
+      <div class="extra rv" data-d="1"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9"><path d="M2 7h13v10H2zM15 10l5-3v10l-5-3"/></svg></span><h3>Câmeras de segurança</h3></div>
+      <div class="extra rv" data-d="2"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9"><path d="M4 4v16M20 4v16M4 8h16M4 16h16M9 4v16M15 4v16"/></svg></span><h3>Cercas elétricas</h3></div>
+      <div class="extra rv" data-d="3"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9"><path d="M12 2a6 6 0 0 0-6 6v4l-2 4h16l-2-4V8a6 6 0 0 0-6-6zM10 20a2 2 0 0 0 4 0"/></svg></span><h3>Alarmes</h3></div>
+    </div>
+  </div>
+</section>
+
+<!-- BRANDS -->
+<section class="brands">
+  <div class="wrap" style="padding:3.5rem 0">
+    <div class="lab rv">Revendedor autorizado das melhores marcas</div>
+    <div class="brands-row rv">
+      <div class="bcard"><img src="assets/brands/agl.png" alt="AGL"></div>
+      <div class="bcard"><img src="assets/brands/intelbras.png" alt="Intelbras"></div>
+      <div class="bcard"><img src="assets/brands/garcia.png" alt="Garcia"></div>
+      <div class="bcard"><img src="assets/brands/rossi.png" alt="Rossi"></div>
+      <div class="bcard"><img src="assets/brands/peccinin.png" alt="Peccinin"></div>
+      <div class="bcard"><img src="assets/brands/tic.png" alt="TIC"></div>
+      <div class="bcard"><img src="assets/brands/inteligente.png" alt="Inteligente"></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="sec cta">
+  <div class="wrap cta-inner rv">
+    <span class="eyebrow">Resolva agora</span>
+    <h2>Seu portão merece <span class="grad">funcionar perfeitamente</span></h2>
+    <p>Fale com a MG Soluções e Serviços e receba um orçamento sem compromisso. Atendimento imediato, 24 horas, em toda a região.</p>
+    <a href="https://wa.me/5531988954257?text=Ol%C3%A1!%20Quero%20fazer%20um%20or%C3%A7amento%20de%20port%C3%A3o%20eletr%C3%B4nico." class="btn btn-wpp">Falar no WhatsApp agora
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="brand"><img src="assets/shield.png" alt="MG Soluções" style="height:44px"><span class="bn">Portão Eletrônico MG<small>MG Soluções e Serviços</small></span></div>
+        <p>Referência em instalação e manutenção de portões eletrônicos em Minas Gerais. 23 anos de experiência, atendimento 24h e o melhor preço da cidade.</p>
+      </div>
+      <div>
+        <h4>Serviços</h4>
+        <ul>
+          <li><a href="#servicos">Portão deslizante</a></li>
+          <li><a href="#servicos">Portão basculante</a></li>
+          <li><a href="#servicos">Portão pivotante</a></li>
+          <li><a href="#extras">Cercas, câmeras e alarmes</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <ul>
+          <li><a href="https://wa.me/5531988954257">WhatsApp · (31) 98895-4257</a></li>
+          <li><a href="https://instagram.com/portaoeletronicomg" target="_blank" rel="noopener">@portaoeletronicomg</a></li>
+          <li>Atendimento 24 horas · Minas Gerais</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-legal">
+      <span>© 2026 MG Soluções e Serviços · Portão Eletrônico MG</span>
+      <span>Instalação · Manutenção · Automação</span>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/5531988954257?text=Ol%C3%A1!%20Quero%20fazer%20um%20or%C3%A7amento%20de%20port%C3%A3o%20eletr%C3%B4nico." class="wfloat" aria-label="WhatsApp" target="_blank" rel="noopener">
+  <svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.2-1.7-.8-2-.9-.3-.1-.5-.2-.7.2-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.4-1.5-.9-.8-1.5-1.8-1.6-2.1-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5L8.8 7c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2 0 1.3.9 2.5 1.1 2.7.2.2 1.9 2.9 4.6 4 .6.3 1.1.4 1.5.5.6.2 1.2.2 1.6.1.5-.1 1.7-.7 1.9-1.3.2-.7.2-1.2.2-1.3-.1-.2-.3-.3-.6-.4M12 2a10 10 0 0 0-8.6 15l-1.4 5 5.1-1.3A10 10 0 1 0 12 2"/></svg>
+</a>
+
+<script>
+const nav=document.getElementById('nav');
+addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>40),{passive:true});
+const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.14,rootMargin:'0px 0px -8% 0px'});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+const burger=document.getElementById('burger'),links=document.querySelector('.nav-links');
+burger.addEventListener('click',()=>{const o=links.style.display==='flex';Object.assign(links.style,o?{display:''}:{display:'flex',position:'absolute',top:'120%',right:'0',flexDirection:'column',background:'rgba(13,22,38,.97)',padding:'1.2rem 1.6rem',borderRadius:'16px',gap:'1rem',backdropFilter:'blur(12px)'});});
+links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.style.display=''));
+document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{const t=document.querySelector(a.getAttribute('href'));if(t){e.preventDefault();window.scrollTo({top:t.getBoundingClientRect().top+scrollY-70,behavior:'smooth'});}}));
+// trabalhos play
+document.querySelectorAll('.work').forEach(w=>{
+  let v=null;
+  w.addEventListener('click',()=>{
+    if(w.classList.contains('playing')){v&&v.pause();w.classList.remove('playing');return;}
+    document.querySelectorAll('.work.playing').forEach(o=>{o.classList.remove('playing');const ov=o.querySelector('video');ov&&ov.pause();});
+    if(!v){v=document.createElement('video');v.src=w.dataset.src;v.loop=true;v.muted=true;v.playsInline=true;w.appendChild(v);}
+    w.classList.add('playing');v.play().catch(()=>{});
+  });
+});
+</script>
+</body>
+</html>
