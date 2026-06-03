@@ -62,10 +62,17 @@ h1,h2,h3{font-family:var(--ff-h);font-weight:800;line-height:1.08;letter-spacing
 .burger span{width:24px;height:2px;background:#fff;border-radius:2px}
 
 /* Hero */
-.hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;background:#0a111f}
 .hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
 .hero-shade{position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(13,22,38,.82),rgba(13,22,38,.7) 40%,rgba(13,22,38,.96)),radial-gradient(120% 80% at 15% 30%,rgba(31,134,214,.4),transparent 55%),radial-gradient(90% 70% at 90% 80%,rgba(234,131,49,.3),transparent 55%)}
 .hero-inner{position:relative;z-index:2;padding:9rem 0 4rem;max-width:46rem}
+/* Mobile: video respeita proporcao 16/9 no topo, conteudo abaixo em fundo escuro */
+@media(max-width:720px){
+  .hero{min-height:0;display:block;padding-top:56.25vw}
+  .hero-video{top:0;left:0;right:0;bottom:auto;width:100%;height:56.25vw;z-index:0}
+  .hero-shade{top:0;left:0;right:0;bottom:auto;height:56.25vw;z-index:1;background:linear-gradient(180deg,transparent 55%,rgba(10,17,31,.85) 100%)}
+  .hero-inner{padding:2rem 0 3rem;z-index:2;max-width:100%}
+}
 .hero-badges{display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:1.6rem}
 .pill{display:inline-flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.07);border:1px solid var(--line);border-radius:100px;padding:.45rem 1rem;font-size:.82rem;font-weight:600;backdrop-filter:blur(6px)}
 .pill .dot{width:8px;height:8px;border-radius:50%;background:#22d36a;box-shadow:0 0 0 0 rgba(34,211,106,.6);animation:pulse 1.8s infinite}
