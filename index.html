@@ -67,23 +67,6 @@ h1,h2,h3{font-family:var(--ff-h);font-weight:800;line-height:1.08;letter-spacing
 .hv-mob{display:none}
 .hero-shade{position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(13,22,38,.82),rgba(13,22,38,.7) 40%,rgba(13,22,38,.96)),radial-gradient(120% 80% at 15% 30%,rgba(31,134,214,.4),transparent 55%),radial-gradient(90% 70% at 90% 80%,rgba(234,131,49,.3),transparent 55%)}
 .hero-inner{position:relative;z-index:2;padding:9rem 0 4rem;max-width:46rem}
-/* Mobile: hero em formato Stories/Reels 9:16, vídeo vertical full bg, conteudo overlay */
-@media(max-width:720px){
-  .hero{min-height:0;height:177.78vw;max-height:100vh;display:flex;align-items:flex-end;padding:0}
-  .hv-desk{display:none}
-  .hv-mob{display:block}
-  .hero-shade{background:linear-gradient(180deg,rgba(13,22,38,.55) 0%,rgba(13,22,38,.25) 35%,rgba(13,22,38,.5) 65%,rgba(13,22,38,.95) 100%)}
-  .hero-inner{padding:0 1.4rem 2.4rem;max-width:100%;width:100%}
-  .hero-badges{margin-bottom:1rem;gap:.4rem}
-  .pill{font-size:.7rem;padding:.35rem .7rem}
-  .hero h1{font-size:clamp(1.6rem,7.5vw,2.4rem);margin-bottom:.9rem}
-  .hero p.sub{font-size:.95rem;margin-bottom:1.4rem;max-width:100%}
-  .hero-actions{gap:.6rem}
-  .hero-stats{margin-top:1.4rem;padding-top:1.2rem;gap:1.2rem;justify-content:space-between}
-  .hero-stats > div{flex:1;min-width:0}
-  .hero-stats .n{font-size:1.55rem}
-  .hero-stats .l{font-size:.7rem}
-}
 .hero-badges{display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:1.6rem}
 .pill{display:inline-flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.07);border:1px solid var(--line);border-radius:100px;padding:.45rem 1rem;font-size:.82rem;font-weight:600;backdrop-filter:blur(6px)}
 .pill .dot{width:8px;height:8px;border-radius:50%;background:#22d36a;box-shadow:0 0 0 0 rgba(34,211,106,.6);animation:pulse 1.8s infinite}
@@ -94,6 +77,22 @@ h1,h2,h3{font-family:var(--ff-h);font-weight:800;line-height:1.08;letter-spacing
 .hero-stats{display:flex;gap:2.6rem;margin-top:3rem;padding-top:1.8rem;border-top:1px solid var(--line);flex-wrap:wrap}
 .hero-stats .n{font-family:var(--ff-h);font-size:2.3rem;font-weight:800;line-height:1}
 .hero-stats .l{font-size:.82rem;color:var(--muted);margin-top:.3rem}
+/* Mobile: hero em formato Stories/Reels 9:16, vídeo vertical full bg, conteudo overlay */
+@media(max-width:720px){
+  .hero{min-height:0;height:177.78vw;max-height:100vh;display:flex;align-items:flex-end;padding:0}
+  .hv-desk{display:none}
+  .hv-mob{display:block}
+  .hero-shade{background:linear-gradient(180deg,rgba(13,22,38,.45) 0%,rgba(13,22,38,.2) 30%,rgba(13,22,38,.55) 60%,rgba(13,22,38,.95) 100%)}
+  .hero-inner{padding:0 1.2rem 1.4rem;max-width:100%;width:100%}
+  .hero-badges{margin-bottom:.7rem;gap:.35rem;flex-wrap:wrap}
+  .hero-badges .pill{font-size:.62rem;padding:.28rem .6rem;letter-spacing:.02em}
+  .hero-badges .pill:nth-child(n+3){display:none}
+  .hero h1{font-size:clamp(1.45rem,6.2vw,1.95rem);margin-bottom:.55rem;line-height:1.06}
+  .hero p.sub{font-size:.82rem;margin-bottom:.9rem;max-width:100%;line-height:1.42}
+  .hero-actions{gap:.5rem}
+  .hero-actions .btn{padding:.75rem 1.15rem;font-size:.86rem}
+  .hero-stats{display:none}
+}
 
 /* Section base */
 .sec{padding:6.5rem 0;position:relative}
