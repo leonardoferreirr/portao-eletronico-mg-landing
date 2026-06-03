@@ -12,7 +12,7 @@
 <link rel="apple-touch-icon" href="assets/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&family=Cinzel:wght@700;900&display=swap" rel="stylesheet">
 <style>
 :root{
   --navy:#0d1626; --navy2:#121e30; --navy3:#1a283d;
@@ -49,9 +49,10 @@ h1,h2,h3{font-family:var(--ff-h);font-weight:800;line-height:1.08;letter-spacing
 .nav-inner{display:flex;align-items:center;justify-content:space-between;background:rgba(13,22,38,.55);backdrop-filter:blur(16px) saturate(150%);border:1px solid var(--line);border-radius:100px;padding:.5rem .6rem .5rem 1.3rem;transition:.4s}
 .nav.scrolled .nav-inner{background:rgba(13,22,38,.9)}
 .brand{display:flex;align-items:center;gap:.7rem}
-.brand img{height:38px;width:auto}
-.brand .bn{font-family:var(--ff-h);font-weight:800;font-size:1rem;line-height:1}
-.brand .bn small{display:block;font-weight:600;font-size:.62rem;letter-spacing:.18em;color:var(--muted);text-transform:uppercase}
+.brand .wm{display:flex;flex-direction:column;line-height:1}
+.brand .wm-top{font-family:"Cinzel",serif;font-weight:900;font-size:1.18rem;letter-spacing:.06em;background:linear-gradient(135deg,#f4d27a 0%,#e0a93c 30%,#fff2c2 50%,#d49a2c 70%,#8a5a13 100%);-webkit-background-clip:text;background-clip:text;color:transparent;text-transform:uppercase}
+.brand .wm-bot{font-family:"Cinzel",serif;font-weight:900;font-size:1.8rem;letter-spacing:.18em;background:linear-gradient(135deg,#f4d27a 0%,#e0a93c 30%,#fff2c2 50%,#d49a2c 70%,#8a5a13 100%);-webkit-background-clip:text;background-clip:text;color:transparent;margin-top:2px}
+@media(max-width:680px){.brand .wm-top{font-size:.95rem}.brand .wm-bot{font-size:1.4rem}}
 .nav-links{display:flex;gap:1.9rem;align-items:center}
 .nav-links a{font-family:var(--ff-h);font-weight:600;font-size:.86rem;color:rgba(255,255,255,.75);transition:.3s}
 .nav-links a:hover{color:#fff}
@@ -121,6 +122,10 @@ h1,h2,h3{font-family:var(--ff-h);font-weight:800;line-height:1.08;letter-spacing
 .works-grid{display:flex;gap:1.2rem;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:.4rem .2rem 1.2rem;scroll-padding-left:.2rem}
 .works-grid::-webkit-scrollbar{display:none}
 .work{flex:0 0 clamp(230px,27%,300px);scroll-snap-align:start;position:relative;border-radius:18px;overflow:hidden;aspect-ratio:9/16;border:1px solid var(--line);cursor:pointer;background:#000;transition:transform .4s var(--ease)}
+@media(max-width:680px){
+  .works-grid{display:grid;grid-template-columns:1fr;gap:1.4rem;overflow:visible;scroll-snap-type:none;padding:.4rem 0}
+  .work{flex:initial;aspect-ratio:9/16;max-height:78vh;border-radius:22px}
+}
 .work:hover{transform:translateY(-6px)}
 .works-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:5;width:52px;height:52px;border-radius:50%;background:rgba(13,22,38,.85);border:1px solid var(--line);color:#fff;cursor:pointer;display:grid;place-items:center;backdrop-filter:blur(8px);transition:.3s;box-shadow:var(--shadow)}
 .works-arrow:hover{background:var(--grad);border-color:transparent;transform:translateY(-50%) scale(1.08)}
@@ -201,7 +206,7 @@ h1,h2,h3{font-family:var(--ff-h);font-weight:800;line-height:1.08;letter-spacing
 <!-- NAV -->
 <header class="nav" id="nav">
   <div class="wrap nav-inner">
-    <a href="#topo" class="brand"><img src="assets/shield.png" alt="MG Soluções"><span class="bn">Portão Eletrônico MG<small>MG Soluções e Serviços</small></span></a>
+    <a href="#topo" class="brand" aria-label="Portão Eletrônico MG"><span class="wm"><span class="wm-top">Portão Eletrônico</span><span class="wm-bot">MG</span></span></a>
     <nav class="nav-links">
       <a href="#problemas">Problemas</a>
       <a href="#servicos">Serviços</a>
@@ -377,7 +382,7 @@ h1,h2,h3{font-family:var(--ff-h);font-weight:800;line-height:1.08;letter-spacing
   <div class="wrap">
     <div class="footer-grid">
       <div>
-        <div class="brand"><img src="assets/shield.png" alt="MG Soluções" style="height:44px"><span class="bn">Portão Eletrônico MG<small>MG Soluções e Serviços</small></span></div>
+        <div class="brand" aria-label="Portão Eletrônico MG"><span class="wm"><span class="wm-top">Portão Eletrônico</span><span class="wm-bot">MG</span></span></div>
         <p>Referência em instalação e manutenção de portões eletrônicos em Minas Gerais. 23 anos de experiência, atendimento 24h e o melhor preço da cidade.</p>
       </div>
       <div>
