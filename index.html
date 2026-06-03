@@ -64,14 +64,25 @@ h1,h2,h3{font-family:var(--ff-h);font-weight:800;line-height:1.08;letter-spacing
 /* Hero */
 .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;background:#0a111f}
 .hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.hv-mob{display:none}
 .hero-shade{position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(13,22,38,.82),rgba(13,22,38,.7) 40%,rgba(13,22,38,.96)),radial-gradient(120% 80% at 15% 30%,rgba(31,134,214,.4),transparent 55%),radial-gradient(90% 70% at 90% 80%,rgba(234,131,49,.3),transparent 55%)}
 .hero-inner{position:relative;z-index:2;padding:9rem 0 4rem;max-width:46rem}
-/* Mobile: video respeita proporcao 16/9 no topo, conteudo abaixo em fundo escuro */
+/* Mobile: hero em formato Stories/Reels 9:16, vídeo vertical full bg, conteudo overlay */
 @media(max-width:720px){
-  .hero{min-height:0;display:block;padding-top:56.25vw}
-  .hero-video{top:0;left:0;right:0;bottom:auto;width:100%;height:56.25vw;z-index:0}
-  .hero-shade{top:0;left:0;right:0;bottom:auto;height:56.25vw;z-index:1;background:linear-gradient(180deg,transparent 55%,rgba(10,17,31,.85) 100%)}
-  .hero-inner{padding:2rem 0 3rem;z-index:2;max-width:100%}
+  .hero{min-height:0;height:177.78vw;max-height:100vh;display:flex;align-items:flex-end;padding:0}
+  .hv-desk{display:none}
+  .hv-mob{display:block}
+  .hero-shade{background:linear-gradient(180deg,rgba(13,22,38,.55) 0%,rgba(13,22,38,.25) 35%,rgba(13,22,38,.5) 65%,rgba(13,22,38,.95) 100%)}
+  .hero-inner{padding:0 1.4rem 2.4rem;max-width:100%;width:100%}
+  .hero-badges{margin-bottom:1rem;gap:.4rem}
+  .pill{font-size:.7rem;padding:.35rem .7rem}
+  .hero h1{font-size:clamp(1.6rem,7.5vw,2.4rem);margin-bottom:.9rem}
+  .hero p.sub{font-size:.95rem;margin-bottom:1.4rem;max-width:100%}
+  .hero-actions{gap:.6rem}
+  .hero-stats{margin-top:1.4rem;padding-top:1.2rem;gap:1.2rem;justify-content:space-between}
+  .hero-stats > div{flex:1;min-width:0}
+  .hero-stats .n{font-size:1.55rem}
+  .hero-stats .l{font-size:.7rem}
 }
 .hero-badges{display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:1.6rem}
 .pill{display:inline-flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.07);border:1px solid var(--line);border-radius:100px;padding:.45rem 1rem;font-size:.82rem;font-weight:600;backdrop-filter:blur(6px)}
@@ -199,12 +210,11 @@ h1,h2,h3{font-family:var(--ff-h);font-weight:800;line-height:1.08;letter-spacing
   .footer-grid{grid-template-columns:1fr 1fr}
 }
 @media(max-width:680px){
-  .nav-links{display:none}.burger{display:flex}
+  .nav-links,.nav-cta{display:none}
+  .burger{display:flex}
+  .nav-inner{padding:.4rem .55rem .4rem 1rem}
   .sec{padding:4.4rem 0}
-  .hero-inner{padding:7.5rem 0 3rem}
-  .hero-stats{gap:1.6rem}
   .prob-grid,.tipos-grid,.dif-grid,.works-grid,.extra-grid,.footer-grid{grid-template-columns:1fr}
-  .brand .bn{font-size:.9rem}
 }
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition-duration:.001s!important}}
 </style>
@@ -228,8 +238,10 @@ h1,h2,h3{font-family:var(--ff-h);font-weight:800;line-height:1.08;letter-spacing
 
 <!-- HERO -->
 <section class="hero" id="topo">
-  <video class="hero-video" autoplay muted loop playsinline poster="assets/hero-poster.jpg">
+  <video class="hero-video hv-desk" autoplay muted loop playsinline poster="assets/hero-poster.jpg">
     <source src="assets/hero-mix.mp4" type="video/mp4"></video>
+  <video class="hero-video hv-mob" autoplay muted loop playsinline poster="assets/hero-poster.jpg">
+    <source src="assets/hero-mix-vertical.mp4" type="video/mp4"></video>
   <div class="hero-shade"></div>
   <div class="wrap">
     <div class="hero-inner">
