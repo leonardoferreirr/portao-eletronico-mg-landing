@@ -134,6 +134,10 @@ h1,h2,h3{font-family:var(--ff-h);font-weight:800;line-height:1.08;letter-spacing
 .difc .ic svg{width:28px;height:28px;stroke:#fff}
 .difc h3{font-size:1.12rem;margin-bottom:.4rem}
 .difc p{color:var(--muted);font-size:.9rem}
+.dif-contract{grid-column:1/-1;display:flex;align-items:center;justify-content:center;gap:1.1rem;text-align:left;background:var(--grad);border:none;padding:1.5rem}
+.dif-contract:hover{transform:translateY(-6px)}
+.dif-contract .ic{margin:0;background:rgba(255,255,255,.2);flex-shrink:0}
+.dif-contract h3{margin:0;color:#fff;font-size:1.18rem}
 
 /* Trabalhos */
 .works-carousel{position:relative}
@@ -169,6 +173,10 @@ h1,h2,h3{font-family:var(--ff-h);font-weight:800;line-height:1.08;letter-spacing
 .extra .ic{width:46px;height:46px;border-radius:12px;background:rgba(31,134,214,.16);display:grid;place-items:center;flex-shrink:0}
 .extra .ic svg{width:23px;height:23px;stroke:var(--blue-bright)}
 .extra h3{font-size:1.05rem}
+.extra-contract{grid-column:1/-1;justify-content:center;background:var(--grad);border:none}
+.extra-contract .ic{background:rgba(255,255,255,.2)}
+.extra-contract .ic svg{stroke:#fff}
+.extra-contract h3{color:#fff;font-size:1.12rem}
 
 /* Brands */
 .brands{background:var(--navy2);border-block:1px solid var(--line)}
@@ -250,7 +258,7 @@ h1,h2,h3{font-family:var(--ff-h);font-weight:800;line-height:1.08;letter-spacing
         <span class="pill">Minas Gerais</span>
       </div>
       <h1>Seu portão parou? <span class="grad">A gente conserta hoje mesmo.</span></h1>
-      <p class="sub">Instalação e manutenção de portões eletrônicos com a qualidade e o melhor preço da cidade. Motor, controle, sensor ou cabo de aço, a gente resolve com agilidade e garantia.</p>
+      <p class="sub">Instalação e manutenção de portões eletrônicos com a qualidade e o melhor preço da cidade. Motor, controle, sensor ou cabo de aço, a gente resolve com agilidade e garantia. Também trabalhamos com contrato mensal preventivo e corretivo.</p>
       <div class="hero-actions">
         <a href="https://wa.me/5531988954257?text=Ol%C3%A1!%20Quero%20fazer%20um%20or%C3%A7amento%20de%20port%C3%A3o%20eletr%C3%B4nico." class="btn btn-grad">Fazer meu orçamento
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -323,6 +331,7 @@ h1,h2,h3{font-family:var(--ff-h);font-weight:800;line-height:1.08;letter-spacing
       <div class="difc rv" data-d="2"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/></svg></div><h3>Equipe profissional</h3><p>Técnicos especializados para resolver o seu problema de forma certa.</p></div>
       <div class="difc rv" data-d="3"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/></svg></div><h3>Reparo imediato</h3><p>Consertamos hoje mesmo, com atendimento imediato e profissional.</p></div>
       <div class="difc rv" data-d="4"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div><h3>Garantia e melhor preço</h3><p>Serviço qualificado, melhor preço da cidade e parcelamento em até 12x.</p></div>
+      <div class="difc dif-contract rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1"/><path d="m9 13 2 2 4-4"/></svg></div><h3>Também trabalhamos com contrato mensal preventivo e corretivo.</h3></div>
     </div>
   </div>
 </section>
@@ -365,6 +374,7 @@ h1,h2,h3{font-family:var(--ff-h);font-weight:800;line-height:1.08;letter-spacing
       <div class="extra rv" data-d="1"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9"><path d="M2 7h13v10H2zM15 10l5-3v10l-5-3"/></svg></span><h3>Câmeras de segurança</h3></div>
       <div class="extra rv" data-d="2"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9"><path d="M4 4v16M20 4v16M4 8h16M4 16h16M9 4v16M15 4v16"/></svg></span><h3>Cercas elétricas</h3></div>
       <div class="extra rv" data-d="3"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9"><path d="M12 2a6 6 0 0 0-6 6v4l-2 4h16l-2-4V8a6 6 0 0 0-6-6zM10 20a2 2 0 0 0 4 0"/></svg></span><h3>Alarmes</h3></div>
+      <div class="extra extra-contract rv"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1"/><path d="m9 13 2 2 4-4"/></svg></span><h3>Contrato mensal preventivo e corretivo.</h3></div>
     </div>
   </div>
 </section>
